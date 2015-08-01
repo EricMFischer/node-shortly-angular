@@ -1,6 +1,7 @@
 <div id='container'>
+  <input ng-model="text"></input>
   <ul>
-    <li ng-repeat="link in data.links | orderBy: '-visits'"> 
+    <li ng-repeat="link in data.links | searchFor:text | orderBy: '-visits'"> 
       <a ng-href="api/links/{{link.code}}"> {{ link.url }} </a> 
       Visits: {{ link.visits }}
     </li>
