@@ -1,5 +1,12 @@
 <div id='container'>
   <ul>
-    <li ng-repeat="link in data.links"> {{ link }} </li>
+    <li ng-repeat="link in data.links | orderBy: '-visits'"> 
+      <a ng-href="api/links/{{link.code}}"> {{ link.url }} </a> 
+      Visits: {{ link.visits }}
+    </li>
   </ul>
+
+  <pre>
+    {{ data.links }}
+  </pre>
 </div>

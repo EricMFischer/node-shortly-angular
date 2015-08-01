@@ -1,7 +1,27 @@
 <div id='container'>
 <!-- Your code here -->
-  <input ng-model="link" placeholder="Enter a url"></input>
-  <button ng-click="addLink()"></button>
-</div>
+<!--   <input ng-model="link" type="url" ng-pattern="urlRegex" placeholder="Enter a url"></input>
+  <button ng-click="addLink()">Add</button>
+  <p>link.$error.pattern = {{ link.$error.pattern }} </p>
+</div> -->
 
 
+<form name="myForm">
+  <label>URL:
+    <input type="url" name="input" ng-model="link.url" required>
+  <label>
+  <button ng-click="addLink()">Add</button>
+  <div role="alert">
+    <span class="error" ng-show="myForm.input.$error.required">
+      Required!</span>
+    <span class="error" ng-show="myForm.input.$error.url">
+      Not valid url!</span>
+  </div>
+<!--   <tt>text = {{url.text}}</tt><br/>
+  <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br/>
+  <tt>myForm.input.$error = {{myForm.input.$error}}</tt><br/>
+  <tt>myForm.$valid = {{myForm.$valid}}</tt><br/>
+  <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br/>
+  <tt>myForm.$error.url = {{!!myForm.$error.url}}</tt><br/> -->
+ </form>
+ </div>
